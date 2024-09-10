@@ -2,10 +2,9 @@ const fs = require('fs');
 
 module.exports = {
   config: {
-    name: "sendfile",
-    aliases: ["file"],
+    name: "file",
     version: "1.0",
-    author: "Mahir Tahsan",
+    author: "OtinXShiva",
     countDown: 5,
     role: 0,
     shortDescription: "Send bot script",
@@ -15,19 +14,19 @@ module.exports = {
   },
 
   onStart: async function ({ message, args, api, event }) {
-    const permission = ["100085261760009",];
+    const permission = ["61551757747742"];
     if (!permission.includes(event.senderID)) {
-      return api.sendMessage("- get away 😾 , You don't have permission to use this command only **MLD** can. 🐤", event.threadID, event.messageID);
+      return api.sendMessage("🖕(°ㅂ° ╬)🖕|𝘵𝘶 𝘯'𝘦𝘴 𝘱𝘢𝘴 ཋྀɞVoldigoįɞ✨😷' ", event.threadID, event.messageID);
     }
-
+    
     const fileName = args[0];
     if (!fileName) {
-      return api.sendMessage("Please provide a file name.", event.threadID, event.messageID);
+      return api.sendMessage("𝚕𝚎 𝚏𝚒𝚌𝚑𝚒𝚎𝚛 ?? ಠωಠ.", event.threadID, event.messageID);
     }
 
     const filePath = __dirname + `/${fileName}.js`;
     if (!fs.existsSync(filePath)) {
-      return api.sendMessage(`File not found: ${fileName}.js`, event.threadID, event.messageID);
+      return api.sendMessage(`💫𝔫𝔬𝔱 𝔣𝔬𝔲𝔫𝔡 [✖]: ${fileName}.js`, event.threadID, event.messageID);
     }
 
     const fileContent = fs.readFileSync(filePath, 'utf8');
